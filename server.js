@@ -39,6 +39,9 @@ const server = http.createServer(async(req,res)=>{
     }catch(error){
         if(error == ENOENT){
             res.statusCode = 404;
+        }else{
+            res.statusCode = 500;
+            res.end("Server error")
         }
     }
 
