@@ -30,7 +30,6 @@ const server = http.createServer(async(req,res)=>{
         res.statusCode = 404;
         res.end("page not found");
     }
-
     try{
         const data = await fs.readFile(filepath);
         res.end(data)
@@ -44,8 +43,6 @@ const server = http.createServer(async(req,res)=>{
             res.end("Server error")
         }
     }
-
-
 });
 
 server.listen(3000,()=>
