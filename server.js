@@ -1,22 +1,48 @@
 const http = require("http");
-const server = http.createServer((req,res)=>
-{
+const fs = require("fs/promises");
+const path = require("path")
+const server = http.createServer(async(req,res)=>{
     // console.log(req.method,req.url)
     // res.end("hii")
 
-    if(req.url =="/home"){
-        res.end("welcome to homepage");
+    // if(req.url =="/home"){
+    //     res.end("welcome to homepage");
 
-    }else if(req.url =="/contact"){
-        res.end("this is contact page")
+    // }else if(req.url =="/contact"){
+    //     res.end("this is contact page")
 
+    // }else if(req.url == "/about"){
+    //     res.end("this is about page")
+    // }
+    // else{
+    //     res.statusCode = 404;
+    //     res.end("page not found")
+    // }
+
+    let filepath;
+    if(req.url == "/home"){
+        filepath = path.join(__dirname,"pages","home.html")
     }else if(req.url == "/about"){
-        res.end("this is about page")
-    }
-    else{
+        filepath = path.join(__dirname,"pages","about.html")
+    }else if(req.url == "/contact"){
+        filepath = path.join(__dirname,"pages","contact.html")
+    }else{
         res.statusCode = 404;
-        res.end("page not found")
+        res.end("page not found");
     }
+
+    try{
+        const data = await fs.readFile(filepath);
+        res.end(data)
+
+
+    }catch(error){
+        if(error == ENOENT){
+            res.statusCode = 404;
+        }
+    }
+
+
 });
 
 server.listen(3000,()=>
