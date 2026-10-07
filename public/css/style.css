@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    background: #172239;
+    padding: 20px 8%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #f5a425;
+}
+
+
+/* =========================
+   HOME PAGE
+========================= */
+
+/* Hero */
+
+.hero {
+    min-height: 500px;
+    background: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #172239;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #f5a425;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #d98c0c;
+}
+
+
+/* Home About */
+
+.about {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.about h2,
+.services h2 {
+    font-size: 32px;
+    color: #172239;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 600px;
+    margin: auto;
+    color: #666;
+}
+
+
+/* Services */
+
+.services {
+    background: #f5f7fa;
+    text-align: center;
+    padding: 70px 8%;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    color: #172239;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #666;
+}
+
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-hero {
+    background: #f5f7fa;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.about-hero h1,
+.contact-hero h1 {
+    color: #172239;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.about-hero p,
+.contact-hero p {
+    color: #666;
+    font-size: 18px;
+}
+
+
+/* About Content */
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 80px 8%;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2,
+.about-box h2 {
+    color: #172239;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.about-box {
+    background: #172239;
+    color: white;
+    padding: 40px;
+    max-width: 350px;
+    border-radius: 10px;
+}
+
+.about-box h2 {
+    color: #f5a425;
+}
+
+.about-box p {
+    color: white;
+}
+
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-hero {
+    background: #f5f7fa;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 80px 8%;
+}
+
+.contact-info {
+    max-width: 400px;
+}
+
+.contact-info h2 {
+    color: #172239;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+
+/* Contact Form */
+
+.contact-form {
+    width: 400px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    color: #172239;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background: #f5a425;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #d98c0c;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #172239;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    /* Home */
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+
+    /* About */
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-box {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .about-hero h1 {
+        font-size: 36px;
+    }
+
+
+    /* Contact */
+
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .contact-hero h1 {
+        font-size: 36px;
+    }
+}
