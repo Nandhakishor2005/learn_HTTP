@@ -26,18 +26,29 @@ const server = http.createServer(async(req,res)=>{
         filepath = path.join(__dirname,"pages","about.html")
     }else if(req.url == "/contact"){
         filepath = path.join(__dirname,"pages","contact.html")
+    }else if(req.url =="/css/style.css"){
+        filepath = path.join(__dirname,"public",req.url)
+        console.log(filepath)
     }else{
         res.statusCode = 404;
         res.end("page not found");
     }
     try{
         const data = await fs.readFile(filepath);
-        res.end(data)
+        let ext = path.extname(filepath)
+        
+        if(ext == ".css"){
+            res.writeHead(200,{"content-type":"text/css"})
+        }else{
+            res.writeHead(200,{"content_type":"type/html"})
+            res.end(data)
 
+        }
 
     }catch(error){
-        if(error == ENOENT){
+        if(error == "ENOENT"){
             res.statusCode = 404;
+            res.end("page not found")
         }else{
             res.statusCode = 500;
             res.end("Server error")
